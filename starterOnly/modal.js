@@ -20,7 +20,25 @@ const burger = document.querySelector('#burger');
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-  console.log('submit form reserve');
+  const f = e.target;
+  console.log('target', f);
+  const formData = new FormData(f);
+  let isError = false;
+  console.log('submit form reserve', formData);
+  if (formData.get('first').length < 3) {
+    const first = document.getElementById('first');
+    first.closest('.formData').dataset.errorVisible = true;
+    isError = true;
+  }
+  if (formData.get('last').length < 3) {
+    const last = document.getElementById('last');
+    last.closest('.formData').dataset.errorVisible = true;
+    isError = true;
+  }
+
+  if (isError) {
+    return;
+  }
   validate();
 });
 
