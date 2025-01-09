@@ -17,6 +17,13 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const form = document.querySelector('form[name="reserve"]');
 const burger = document.querySelector('#burger');
+const closeBtn = document.querySelector(".close-btn");
+
+closeBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  console.log('click close');
+  modalbg.style.display = "none";
+});
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
