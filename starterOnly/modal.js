@@ -8,7 +8,7 @@ function editNav() {
 }
 
 function validate() {
-  console.log('validate!')
+  console.log("validate!");
 }
 
 // DOM Elements
@@ -25,21 +25,21 @@ closeBtn.addEventListener('click', function(e) {
   modalbg.style.display = "none";
 });
 
-form.addEventListener('submit', function(e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
   const f = e.target;
-  console.log('target', f);
+  console.log("target", f);
   const formData = new FormData(f);
   let isError = false;
-  console.log('submit form reserve', formData);
-  if (formData.get('first').length < 3) {
-    const first = document.getElementById('first');
-    first.closest('.formData').dataset.errorVisible = true;
+  console.log("submit form reserve", formData);
+  if (formData.get("first").length < 3) {
+    const first = document.getElementById("first");
+    first.closest(".formData").dataset.errorVisible = true;
     isError = true;
   }
-  if (formData.get('last').length < 3) {
-    const last = document.getElementById('last');
-    last.closest('.formData').dataset.errorVisible = true;
+  if (formData.get("last").length < 3) {
+    const last = document.getElementById("last");
+    last.closest(".formData").dataset.errorVisible = true;
     isError = true;
   }
 
@@ -49,11 +49,11 @@ form.addEventListener('submit', function(e) {
   validate();
 });
 
-burger.addEventListener('click', function(e) {
+burger.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log('click burger');
+  console.log("click burger");
   editNav();
-})
+});
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -61,6 +61,5 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  console.log("launch Modal");
 }
-
-
