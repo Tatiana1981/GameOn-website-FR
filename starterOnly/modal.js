@@ -18,13 +18,17 @@ const formData = document.querySelectorAll(".formData");
 const form = document.querySelector('form[name="reserve"]');
 const burger = document.querySelector('#burger');
 const closeBtn = document.querySelector(".close-btn");
+const email = document.querySelectorAll(".email");
+const birthdate = document.querySelector(".birthdate");
 
+// Close Btn
 closeBtn.addEventListener('click', function(e) {
   e.preventDefault();
   console.log('click close');
   modalbg.style.display = "none";
 });
 
+// Form submit
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   const f = e.target;
@@ -49,6 +53,35 @@ form.addEventListener("submit", function (e) {
   validate();
 });
 
+// email validation
+email.forEach((e) => {
+  e.addEventListener("change", function (e) {
+    console.log("change email", e.target.value);
+    if (!e.target.checkValidity()) {
+      e.target.closest(".formData").dataset.errorVisible = true;
+    } else {
+      e.target.closest(".formData").dataset.errorVisible = false;
+    }
+  });
+});
+
+//date of birth validation
+birthdate.addEventListener("change", function (e) {
+  console.log("change birthdate", e.target.value);
+  const birthdate = new Date(e.target.value);
+  const now = new Date();
+  const age = now.getFullYear() - birthdate.getFullYear();
+  console.log("age", age);
+  if (age < 18) {
+    e.target.closest(".formData").dataset.errorVisible = true;
+  } else {
+    e.target.closest(".formData").dataset.errorVisible = false;
+  }
+});
+
+
+
+// Burger event
 burger.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("click burger");
