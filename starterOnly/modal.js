@@ -54,7 +54,7 @@ form.addEventListener("submit", function (e) {
   else {
     const first = document.getElementById("first");
     first.closest(".formData").dataset.errorVisible= false;}
-  if (formData.get("last").length < 3) {
+  if (formData.get("last").length < 2) {
     const last = document.getElementById("last");
     last.closest(".formData").dataset.errorVisible = true;
     isError = true;
@@ -68,6 +68,7 @@ form.addEventListener("submit", function (e) {
     return;
   }
   validate();
+  modalbg.style.display = "none";
 });
 
 // email validation
