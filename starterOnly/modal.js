@@ -9,6 +9,10 @@ function editNav() {
 
 function validate() {
   console.log("validate!");
+  const modalForm = document.getElementById('modal-form');
+  const modalConfirmation = document.getElementById('modal-confirmation');
+  modalForm.classList.add('hide');
+  modalConfirmation.classList.remove('hide');
 }
 
 // DOM Elements
@@ -119,7 +123,6 @@ form.addEventListener("submit", function (e) {
     return;
   }
   validate();
-  modalbg.style.display = "none";
 });
 
 // email validation
