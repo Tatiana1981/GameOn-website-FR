@@ -92,14 +92,21 @@ form.addEventListener("submit", function (e) {
 
   const quantityDom = document.getElementById("quantity");
   console.log('quantityDomValue', quantityDom.value)
-  // nbr de concours
-  if (quantityDom.value < 0 || quantityDom.value > 99) {
-    quantityDom.closest(".formData").dataset.errorVisible = true;
-    isError = true;
-  } else {
-    quantityDom.closest(".formData").dataset.errorVisible = false;
-  }
-
+ 
+// nbr de concours
+if (quantityDom.value === "") {
+  quantityDom.closest(".formData").dataset.errorVisible = true;
+  quantityDom.closest(".formData").dataset.error =
+    "Ce champs est obligatoire";
+  isError = true;
+} else if (quantityDom.value < 0 || quantityDom.value > 99) {
+  quantityDom.closest(".formData").dataset.errorVisible = true;
+  quantityDom.closest(".formData").dataset.error =
+    "Vous devez entrer un nombre compris entre 0 et 99";
+  isError = true;
+} else {
+  quantityDom.closest(".formData").dataset.errorVisible = false;
+}
   //location
   if (formData.get("location") === null) {
     const location = document.getElementById("location1");
