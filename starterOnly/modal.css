@@ -68,38 +68,7 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
 
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-} 
 
 main {
   font-size: 130%;
@@ -492,7 +461,30 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
-@media screen and (max-width: 800px) {
+
+@media screen and (max-width: 1024px) {
+  .hero-img img {
+    object-fit: cover;
+  }
+  .hero-headline {
+    white-space: inherit;
+  }
+  .topnav a {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .hero-img img {
+    object-fit: cover;
+  }
+  .hero-headline {
+    white-space: nowrap;
+  }
+  .topnav a {
+    width: auto;
+  }
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -529,7 +521,57 @@ footer {
     margin-top: 50px;
     text-align: center;
   }
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav {
+    margin-top: 0;
+  }
+  
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .hero-content {
+    min-width: inherit;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .hero-headline {
+    font-size: 40px;
+  }
+  .hero-headline br {
+    display: none;
+  }
+  .header-logo img {
+    width: 150px;
+    margin-top: 15px;
+  }
+  .hero-text {
+    margin-top: 25px;
+    font-size: 14px;
+  }
+  .hero-img img {
+    margin-top: 10px;
+  }
 }
+
+
+
+
 
 @keyframes modalopen {
   from {
@@ -540,6 +582,7 @@ footer {
     opacity: 1;
   }
 }
+
 
 .hide {
   display: none !important;
