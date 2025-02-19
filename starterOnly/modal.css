@@ -188,6 +188,20 @@ main {
   margin: 15px auto;
 }
 
+.modal-confirm-title {
+  text-align: center;
+  font-size: 36px;
+}
+#modal-confirmation .modal-confirm-btn {
+  margin-top: 200px;
+}
+#modal-confirmation {
+  min-height: 500px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 17px;
@@ -528,5 +542,6 @@ footer {
 }
 
 .hide {
-  display: none;
+  display: none !important;
+  
 }
