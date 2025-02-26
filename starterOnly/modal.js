@@ -30,7 +30,7 @@ const quantity = document.querySelector('input[name="quantity"]');
 closeBtn.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("click close");
-  modalbg.style.display = "none";
+  hideModal();
 });
 
 // Form submit
@@ -184,3 +184,13 @@ function launchModal() {
   modalbg.style.display = "block";
   console.log("launch Modal");
 }
+// btn fermer
+
+function hideModal(){
+  modalbg.style.display = "none";
+  console.log("hide Modal");
+}
+const modalConfirmBtn=document.querySelector('.modal-confirm-btn');
+modalConfirmBtn.addEventListener('click',function(){
+  hideModal();
+})
